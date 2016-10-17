@@ -1,0 +1,9 @@
+{
+	"remoteapi": "https://service.digitalnemesto.sk/DmApi", 
+	"alloworigins": [
+		"http://localhost:8008", 
+		"https://localhost:8008", 
+		"https://orucrob.github.io", 
+		"http://orucrob.github.io"
+	]
+}

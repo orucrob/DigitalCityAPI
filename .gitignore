@@ -1,0 +1,8 @@
+.metadata
+.gradle
+.classpath
+.project
+RemoteSystemsTempFiles
+clientdb.xml
+bin
+build

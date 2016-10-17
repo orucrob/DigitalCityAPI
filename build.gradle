@@ -1,0 +1,40 @@
+plugins {
+  id 'org.hidetake.ssh' version '2.0.0'
+}
+apply plugin: "eclipse"
+apply plugin: "war"
+
+
+version = '0.9-SNAPSHOT'
+
+if (!project.hasProperty('env')) {
+	ext.env = 'localW'
+}
+
+repositories {
+   mavenCentral()
+}
+
+dependencies {
+	compile group: 'org.json', name: 'json', version: '20160212'
+	compile 'org.slf4j:slf4j-api:1.7.21'
+	runtime 'org.apache.logging.log4j:log4j-slf4j-impl:2.6.2'
+	runtime 'org.apache.logging.log4j:log4j-core:2.6.2'
+  providedCompile 'javax.servlet:javax.servlet-api:3.1.0'
+}
+
+
+
+processResources {
+   include "log4j2.xml"
+   include "environment.json"
+}
+
+war{
+	archiveName "dcapi.war"
+}
+
+
+eclipse.project {
+  natures 'org.springsource.ide.eclipse.gradle.core.nature'
+}
